@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas de Productos</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="app">
+        <div v-if="!userName">
+            <!-- Formulario para ingresar el nombre -->
+            <label for="inputName">Ingresa tu nombre:</label>
+            <input type="text" id="inputName" v-model="tempUserName">
+            <button @click="startApp">Iniciar</button>
+        </div>
+
+        <div v-else>
+            <h1>Bienvenido, {{ userName }}! </h1>
+
+            <img src="./ventas.jpg" alt=""class="clase1">
+            
+            <h3>Ingrese los datos del producto que se le pide a continuación:</h3>
+
+            <div class="product-form">
+                <label for="productName">Nombre del Producto:</label>
+                <input type="text" id="productName" v-model="newProduct.name" placeholder="Nombre del producto">
+
+                <label for="productPrice">Precio:</label>
+                <input type="number" id="productPrice" v-model="newProduct.price" placeholder="Precio">
+
+                <label for="productQuantity">Cantidad:</label>
+                <input type="number" id="productQuantity" v-model="newProduct.quantity" placeholder="Cantidad">
+
+                <label for="productDate">Fecha de Venta:</label>
+                <input type="date" id="productDate" v-model="newProduct.date">
+
+                <button @click="addProduct">Agregar Producto</button>
+            </div>
+
+            <div class="sort-options">
+                <label for="sortSelect">Ordenar por:</label>
+                <select id="sortSelect" v-model="sortOption" @change="sortProducts">
+                    <option value="nameAsc">Nombre (Ascendente)</option>
+                    <option value="nameDesc">Nombre (Descendente)</option>
+                    <option value="priceAsc">Precio (Ascendente)</option>
+                    <option value="priceDesc">Precio (Descendente)</option>
+                </select>
+            </div>
+
+            <div class="product-list">
+                <h2>Lista de Productos</h2>
+                <ul id="product-list">
+                    <li v-for="(product, index) in products" :key="index">
+                        {{ product.name }} - ${{ product.price }} - Cantidad: {{ product.quantity }} - Fecha: {{ product.date }}
+                        <span @click="editProduct(index)">Editar</span>
+                        <span @click="removeProduct(index)">Eliminar</span>
+                        <span class="subtotal">Subtotal: ${{ product.price * product.quantity }}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="total-sales">
+                <h2>Total de Ventas</h2>
+                <p>Total: ${{ totalSales }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

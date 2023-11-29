@@ -1,0 +1,142 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: arial;
+    background-color:lightblue;
+}
+
+#app {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario de ingreso de nombre */
+#inputName, #inputName::placeholder, button {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    /* Efecto de cambio de color al pasar el mouse sobre el botón */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la sección principal de la aplicación */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2196f3;
+    animation: move;
+}
+
+.clase1 {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.clase1:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+/* Estilos para el formulario de ingreso de productos */
+.product-form {
+    margin-bottom: 20px;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la lista de productos */
+.product-list {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: #f9f9f9; 
+    /* Transiciones para animación de entrada */
+    transform: translateY(20px);
+    transition: transform 0.5s;
+}
+
+li.fade-in {
+    transform: translateY(0);
+}
+
+li:hover {
+    background-color: #e6f7ff; 
+}
+
+li span {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #ff5722;
+    transition: color 0.3s;
+}
+
+li span:hover {
+    color: #ff8f00;
+}
+
+.subtotal {
+    float: right;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+
+.subtotal {
+    float: right;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Estilos para las opciones de ordenamiento */
+.sort-options {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el resumen de ventas */
+.total-sales {
+    text-align: right;
+    font-size: 20px;
+    color: #f44336;
+}
